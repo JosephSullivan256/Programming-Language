@@ -42,9 +42,12 @@ public class LexerBuilder {
 				if(!temp.getA()) {
 					if(!previousType.equals("")) {
 						tokens.add(new Token(previousType,input.substring(xi,xf-1)));
+						xi = xf-1;
+						//xf++;
+					} else {
+						xi = xf;
+						xf++;
 					}
-					xi = xf;
-					xf++;
 					previousType = "";
 				} else {
 					previousType = temp.getB();

@@ -16,9 +16,9 @@ public class Main {
 		Lexer lexer = new LexerBuilder()
 				.with("keyword", "for|new|bool|do|if|break|double|else|struct|return|int|char|void|const|float|while")
 				.with("literal", "true|false|((\".*\")|(\".*))|((\\d+(\\.\\d+)?)|(\\d*\\.\\d+))") //\".*\"
-				.with("identifier", "[a-zA-Z0-9_\\-+*\\/]+")
+				.with("identifier", "[a-zA-Z0-9_\\-+*\\/%]+")
 				.with("separator", "[\\{\\}\\(\\),\\.;]")
-				.with("operator", "(:=)|[=<>]")
+				.with("operator", "==|&&|\\|\\||(:=)|[!=<>&|^]")
 				.with("comment", "\\/{2}(.*)([\\n\\r]|(\\r\\n))")
 				.build();
 		
